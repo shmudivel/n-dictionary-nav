@@ -8,7 +8,7 @@ const style = {
     label: ``,
   }
 
-const TransactionForm = () => {
+const TransactionForm = ({ uid }) => {
     const [name, setName] = useState('')
     const [amount, setAmount] = useState('')
     const { addDocument, response } = useFirestore('transactions')
@@ -17,7 +17,7 @@ const TransactionForm = () => {
         e.preventDefault()
 
         addDocument({
-            uid: 
+            uid,
             name,
             amount
         });

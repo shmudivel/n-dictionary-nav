@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAuthContext} from '../../hooks/useAuthContext'
 
 
 //components
@@ -13,13 +14,13 @@ const style = {
 }
 
 const Home = () => {
-  const { user } = useAuth
+  const { user } = useAuthContext()
 
   return (
     <div className={style.container}>
 
       <div className={style.sidebar}>
-        <TransactionForm />
+        <TransactionForm uid={user.uid}/>
       </div>
 
       <div className={style.content}>
