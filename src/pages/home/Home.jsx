@@ -1,9 +1,11 @@
 import React from 'react'
 import { useAuthContext} from '../../hooks/useAuthContext'
+import { useCollection } from '../../hooks/useCollection'
 
 
 //components
 import TransactionForm from './TransactionForm'
+import TransactionList from './TransactionList'
 
 
 //styles
@@ -15,6 +17,7 @@ const style = {
 
 const Home = () => {
   const { user } = useAuthContext()
+  const{ documents, error } = useCollection('transactions')
 
   return (
     <div className={style.container}>
@@ -24,7 +27,8 @@ const Home = () => {
       </div>
 
       <div className={style.content}>
-        transaction list
+        {error && <p>{error}</p>}
+        {documents && <TransactionList transactions={documents}/>}
       </div>
     </div>
   )
