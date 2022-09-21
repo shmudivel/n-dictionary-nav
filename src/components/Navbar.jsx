@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-green-300 pt-[20px] px-[10px] box-border">
-      <ul className="flex mt-0 mx-auto max-w-[960px] items-center">
+      <ul className="flex my-0 mx-auto max-w-[960px] items-center">
         <li className="mr-auto font-bold tracking-wider text-lg">myMoney</li>
 
         {!user && (
